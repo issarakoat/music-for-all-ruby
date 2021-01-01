@@ -31,3 +31,5 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'simple_form'
+

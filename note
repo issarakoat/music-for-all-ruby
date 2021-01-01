@@ -1,1 +1,4 @@
 browser => http://localhost:3000/
+
+rails g controller home index
+git push heroku HEAD:master
