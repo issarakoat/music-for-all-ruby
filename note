@@ -2,3 +2,6 @@ browser => http://localhost:3000/
 
 rails g controller home index
 git push heroku HEAD:master
+
+create course table
+rails g scaffold Course title:string description:text instrument:string genre:string language:string level:string price:integer  
