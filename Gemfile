@@ -35,4 +35,5 @@ gem 'simple_form'
 gem "haml-rails", "~> 2.0"
 gem 'devise'
 gem 'friendly_id', '~> 5.4.0'
+gem 'ransack'
 

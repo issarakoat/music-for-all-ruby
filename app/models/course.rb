@@ -10,4 +10,15 @@ class Course < ApplicationRecord
     has_rich_text :description
     extend FriendlyId
     friendly_id :title, use: :slugged
+
+    LANGUAGES = [:"English", :"Japanese", :"Thai", :"Spanish"]
+    def self.languages
+      LANGUAGES.map { |language| [language, language] }
+    end
+  
+    LEVELS = [:"Beginner", :"Intermediate", :"Advanced", :"All Levels"]
+    def self.levels
+      LEVELS.map { |level| [level, level] }
+    end
+  
 end
