@@ -6,3 +6,5 @@ heroku run rake db:migrate
 
 create course table
 rails g scaffold Course title:string description:text instrument:string genre:string language:string level:string price:integer  
+
+rails g pundit:policy Model
