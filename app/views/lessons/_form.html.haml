@@ -1,19 +1,12 @@
-= form_for @lesson do |f|
-  - if @lesson.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@lesson.errors.count, "error")} prohibited this lesson from being saved:"
-      %ul
-        - @lesson.errors.full_messages.each do |message|
-          %li= message
+= simple_form_for(@lesson) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :instruction
-    = f.text_area :instruction
-  .field
-    = f.label :course
-    = f.text_field :course
-  .actions
-    = f.submit 'Save'
+  .form-inputs
+    = f.input :title
+    = f.input :instruction
+    /= f.association :course
+    = f.input :course_id, input_html: {value: @lesson.course_id || params[:course_id]}, as: :hidden
+
+  .form-actions
+    = f.button :submit
