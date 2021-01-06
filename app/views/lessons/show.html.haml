@@ -2,19 +2,9 @@
 \/
 = link_to @lesson.course.title, course_path(@lesson.course)
 \/
-= link_to @lesson.title, lesson_path(@lesson)
+= link_to @lesson.title, course_lesson_path(@course, @lesson)
 %p
 
-%p
-  %b Title:
-  = @lesson.title
-%p
-  %b Instruction:
-  = @lesson.instruction
-%p
-  %b Course:
-  = @lesson.course
+= render 'lessons/lesson', lesson: @lesson
 
-= link_to 'Edit', edit_lesson_path(@lesson)
-\|
-= link_to 'Back', lessons_path
+= link_to 'Back to course', course_path(@lesson.course)
