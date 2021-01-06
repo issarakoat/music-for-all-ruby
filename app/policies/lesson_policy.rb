@@ -4,12 +4,13 @@ class LessonPolicy < ApplicationPolicy
       scope.all
     end
   end
+  
   def show?
-    @user.has_role?(:admin) || @record.course.user_id == @user.id
+    @user.has_role?(:admin) || @record.course.user_id == @user.id || @record.course.bought(@user) == true
   end
-
+  
   def edit?
-    @record.course.user_id == @user.id
+    @user.present? && @record.course.user_id == @user.id
   end
 
   def update?
@@ -21,7 +22,7 @@ class LessonPolicy < ApplicationPolicy
   end
 
   def create?
-    #@user.has_role?(:teacher)
+    @record.course.user_id == @user.id
   end
 
   def destroy?
