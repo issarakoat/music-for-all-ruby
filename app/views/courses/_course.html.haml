@@ -2,12 +2,11 @@
   .card-header
     .fa.fa-graduation-cap
     = link_to course.title, course_path(course)
-
   .card-footer
     .text-center
       = number_to_currency(course.price)
   .card-footer
-    .fa.fa-book
+    .fa.fa-tasks
     = course.lessons.count
   .card-footer
     .row
