@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def edit
     authorize @user
   end
-
+  
   def update
     authorize @user
     if @user.update(user_params)
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
+  
   private
 
   def set_user

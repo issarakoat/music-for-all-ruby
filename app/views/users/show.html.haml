@@ -1,2 +1,6 @@
-.mt-2
-    = render 'users/user', user: @user
+- content_for :title do
+  Music For All 
+  | 
+  = @user.username
+
+= render 'users/user', user: @user
