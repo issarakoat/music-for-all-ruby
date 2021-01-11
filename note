@@ -10,3 +10,4 @@ rails g scaffold Course title:string description:text instrument:string genre:st
 rails g pundit:policy Model
 
 rails g scaffold lessons title:string instruction:text course:references
+rails g scaffold Enrollments course:references user:references rating:integer review:text price:integer
