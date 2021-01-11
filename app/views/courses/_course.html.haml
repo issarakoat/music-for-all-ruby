@@ -4,7 +4,7 @@
     = link_to course.title, course_path(course)
   .card-footer
     .text-center
-      = number_to_currency(course.price)
+      = enrollment_button(course)
   .card-footer
     .fa.fa-tasks
     = course.lessons.count
