@@ -12,3 +12,5 @@ rails g migration AddSlugToUsers slug:uniq
 
 rails g scaffold lessons title:string instruction:text course:references
 rails g scaffold Enrollments course:references user:references rating:integer review:text price:integer
+
+rails g migration AddAverageRatingToCourses average_rating:float
