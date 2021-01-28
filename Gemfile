@@ -42,5 +42,5 @@ gem "pundit"
 gem 'pagy'
 gem "chartkick"
 gem 'groupdate'
-gem 'rails-erd', group: :development #sudo apt-get install graphviz; bundle exec erd
+gem 'rails-erd', group: :development #sudo apt-get install graphviz; bundle exec erdPapp
 
