@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:show]
-  before_action :set_course, only: [:show, :edit, :update, :destroy, :approve, :unapprove]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :approve, :unapprove, :analytics]
 
   # GET /courses
   # GET /courses.json
@@ -59,8 +59,10 @@ class CoursesController < ApplicationController
     redirect_to @course, notice: "Course upapproved and hidden!"
   end
 
-  # GET /courses/1
-  # GET /courses/1.json
+  def analytics
+    authorize @course, :owner?
+  end
+
   def show
     authorize @course
     @lessons = @course.lessons
