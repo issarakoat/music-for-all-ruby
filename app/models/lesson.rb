@@ -13,7 +13,7 @@ class Lesson < ApplicationRecord
   #   size: { less_than: 50.megabytes , message: 'size should be under 50 megabytes' }
   # validates :video_thumbnail,
   #   content_type: ['image/png', 'image/jpg', 'image/jpeg'], 
-  #   size: { less_than: 500.kilobytes , message: 'size should be under 500 kilobytes' }
+  #   size: { less_than: 500.kilobytes , message: 'size should be under 500 kilobytes.' }
 
   extend FriendlyId
   friendly_id :title, use: :slugged
